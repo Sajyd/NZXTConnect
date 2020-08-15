@@ -1,5 +1,5 @@
 # NZXTConnect
-AuraConnect tweak to support NZXT Kraken X3
+[AuraConnect](https://github.com/AndrewBabbitt97/AuraConnect) tweak to support NZXT Kraken X3
 
 Make sure NZXT CAM is closed at startup and during install
 
