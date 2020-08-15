@@ -1,0 +1,56 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>dotnet-AuraConnect-E76FA53B-F40C-451C-A4D8-6E09BF553310</UserSecretsId>
+    <Version>1.1.0</Version>
+    <Authors>ASUSTeK Computer Inc.</Authors>
+    <Company>ASUSTeK Computer Inc.</Company>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+    <Product>Aura Connect</Product>
+    <PublishTrimmed>true</PublishTrimmed>
+    <PublishReadyToRun>true</PublishReadyToRun>
+    <RuntimeIdentifier>win-x86</RuntimeIdentifier>
+    <OutputType>Exe</OutputType>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>../bin/Debug/</OutputPath>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>../bin/Release/</OutputPath>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="hidlibrary" Version="3.3.28" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="3.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.EventLog" Version="3.1.0" />
+    <PackageReference Include="NReco.Logging.File" Version="1.0.4" />
+    <PackageReference Include="RGBKit.Providers.Aura" Version="1.0.2" />
+    <PackageReference Include="RzChromaBroadcastAPI.NET" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Icon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PublishReadyToRunExclude Include="System.Security.Principal.Windows.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="RGBKit.Core">
+      <HintPath>..\..\..\..\..\source\repos\rgbkit\src\RGBKit.Core\bin\Debug\netstandard2.1\RGBKit.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="RGBKit.Providers.NZXT">
+      <HintPath>RGBKit.Providers.NZXT.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
